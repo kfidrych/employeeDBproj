@@ -19,41 +19,69 @@
                 <div class="jumbotron">
                     <h1>Employee Data Management</h1>
                     <p>A Comprehensive Directory of Employee Billable House</p>
-                    <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
-                <div id="employeeInfoTable">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col">Employee Name</th>
-                                <th scope="col">Role</th>
-                                <th scope="col">Start Date</th>
-                                <th scope="col">Months Worked</th>
-                                <th scope="col">Rate</th>
-                                <th scope="col">Billable</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row" id="name"></th>
-                                <td id="role"></td>
-                                <td id="startDate"></td>
-                                <td id="monthsWorked"></td>
-                                <td id="rate"></td>
-                                <td id="billable"></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="panel panel-default" id="employeeInfoTable">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Current Employees</h3>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Employee Name</th>
+                                    <th scope="col">Role</th>
+                                    <th scope="col">Start Date</th>
+                                    <th scope="col">Months Worked</th>
+                                    <th scope="col">Rate</th>
+                                    <th scope="col">Total Billed ($)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row" id="name"></th>
+                                    <td id="role"></td>
+                                    <td id="startDate"></td>
+                                    <td id="monthsWorked"></td>
+                                    <td id="rate"></td>
+                                    <td id="billed"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
-                <div id="addEmployee">
+                <div class="panel panel-default" id="addEmployee">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Add Employee</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="newName">Employee Name</label>
+                                <input class="form-control" id="newName" type="text">
+                            </div>
+                            <div class="form-group">
+                                <label for="newRole">Role</label>
+                                <input class="form-control" id="newRole" type="text">
+                            </div>
+                            <div class="form-group">
+                                <label for="newStartDate">Start Date (DD/MM/YY - ex: 01/01/89</label>
+                                <input class="form-control" id="newStartDate" type="text">
+                            </div>
+                            <div class="form-group">
+                                <label for="newRate">Monthly Rate</label>
+                                <input class="form-control" id="newRate" type="text">
+                            </div>
+                        </form>
+                        <button class="btn btn-primary" id="submit" type="submit">Submit</button>
+                    </div>
                 </div>
             </div>
         </div>
