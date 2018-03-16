@@ -28,3 +28,12 @@ $("#submit").on("click", function(event) {
 		})
 
 })
+
+database.ref().on("child_added", function (snapshot) {
+  var monthsWorked = currentDate - snapshot.val().startDate;
+  var totalBilled = monthsWorked * snapshot.val().monthRate;
+
+
+  $("tbody").append("<tr><th>" + snapshot.val().name + "</th><th>" + snapshot.val().role + "</th><th>" +
+    snapshot.val().startDate + "</th><th>" + monthsWorked + "</th><th>" + snapshot.val().monthRate + "</th><th>" + totalBilled + "</th></tr>")
+})
