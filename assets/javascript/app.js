@@ -13,12 +13,20 @@
 var database = firebase.database();
 
 
+<<<<<<< HEAD
 $("#submit").on("click", function(event) {
     event.preventDefault();
 	var name = $("#newName").val().trim();
 	var role = $("#newRole").val().trim();
 	var startDate = $("#newStartDate").val().trim();
 	var monthRate = $("#newRate").val().trim();
+=======
+$("#submit").on("click", function() {
+	var name = $("#newName").val().trim()
+	var role = $("#newRole").val().trim()
+	var startDate = $("#newStartDate").val().trim()
+	var monthRate = $("#newRate").val().trim()
+>>>>>>> 88685aed27b790747377d05897849016e28fb265
 
 	database.ref().push({
 		name: name,
