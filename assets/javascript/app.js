@@ -30,7 +30,8 @@ $("#submit").on("click", function(event) {
 })
 
 database.ref().on("child_added", function (snapshot) {
-  var monthsWorked = currentDate - snapshot.val().startDate;
+  var convertedDate = moment(snapshot.val().startDate, "DD/MM/YY")
+  var monthsWorked =  moment().diff(convertedDate, "months")
   var totalBilled = monthsWorked * snapshot.val().monthRate;
 
 
