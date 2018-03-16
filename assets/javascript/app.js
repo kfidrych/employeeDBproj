@@ -29,9 +29,9 @@ $("#submit").on("click", function () {
 
 })
 
-database.ref().on("child_added", function(snapshot){
-  var currentDate = moment().valueOf();
-  var monthsWorked =  currentDate - moment(snapshot.val().startDate, "DD-MM-YYYY").valueOf;
+database.ref().on("child_added", function (snapshot) {
+  var convertedDate = moment(snapshot.val().startDate, "DD/MM/YY")
+  var monthsWorked =  moment().diff(convertedDate, "months")
   var totalBilled = monthsWorked * snapshot.val().monthRate;
 
 
