@@ -10,14 +10,15 @@
   };
   firebase.initializeApp(config);
 
-var database = firebase.database;
+var database = firebase.database();
 
 
-$("#submit").on("click", function{
-	var name = $("#name").val().trim()
-	var role = $("#role").val().trim()
-	var startDate = $("#startDate").val().trim()
-	var monthRate = $("#monthRate").val().trim()
+$("#submit").on("click", function(event) {
+    event.preventDefault();
+	var name = $("#newName").val().trim();
+	var role = $("#newRole").val().trim();
+	var startDate = $("#newStartDate").val().trim();
+	var monthRate = $("#newRate").val().trim();
 
 	database.ref().push({
 		name: name,
